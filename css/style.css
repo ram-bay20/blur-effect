@@ -1,0 +1,125 @@
+body{
+    margin: 0;
+    background: rgba(0 ,0 ,0 ,0.9);
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+  
+}
+.showcase::after{
+    content: '';
+    height: 100vh;
+    width: 100%;
+    background: url("../img/backt.jpg") no-repeat center top / cover;
+   display: block;
+    filter: blur(10px);
+    -webkit-filter: blur(10px);
+    transition: all 0.7s;
+
+}
+.showcase:hover::after{
+    filter: blur(0px);
+    -webkit-filter: blur(0px); 
+}
+
+.showcase:hover .content{
+    filter: blur(3px);
+    -webkit-filter: blur(3px); 
+}
+.content img{
+    max-height: 200px;
+    max-width: 300px;
+   
+}
+
+ .content{
+    position: absolute;
+    left: 50%;
+    top: 10%;
+    z-index: 1;
+    margin-top: 90px;
+    margin-left: -145px;
+   max-width: 300px;
+   max-height: 300px;
+    text-align: center;
+    color: #fff;
+    
+}
+
+.content .title{
+    font-size: 40px;
+    
+}
+
+ .content .text{
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 15px;
+    line-height: 15px;
+}
+.container{
+   max-width: 960px;
+    margin: auto;
+    overflow: hidden;
+    padding: 4rem 1rem;
+    
+}
+.grid{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 1.5rem;
+}
+.center{
+    text-align: center;
+    margin: auto;
+}
+.light{
+    background-color: azure;
+    color: #222;
+}
+.dark{
+    background-color: #222;
+    color: azure;
+    margin: 0;
+    padding: 1.5rem;
+}
+.grid2{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 1.2rem;
+}
+@media  (max-width:560px) {
+    .showcase::after{
+        height: 50vh;
+        width: 100%;
+    }
+    .content{
+        top: 5%;
+        left: 20%;
+        margin: 5px;
+    }
+    .content img{
+        height: 130px;
+        width: 200px;
+    }
+    .content .text{
+        display: none;
+    }
+    .grid, .grid2{
+        grid-template-columns: 1fr;
+    }
+    .services div{
+        border-bottom: 1px dashed #222;
+        padding: 1.2rem 1rem;
+    }
+}
+
+@media (max-height:500px) {
+    .content .title,
+    .content .text{
+        display: none;
+    }
+    .content {
+        top: 0;
+        left: 30%;
+    }
+}
